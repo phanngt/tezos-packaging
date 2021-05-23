@@ -34,7 +34,7 @@ class TezosSigner < Formula
   def make_deps
     ENV.deparallelize
     ENV["CARGO_HOME"]="./.cargo"
-    system "rustup-init", "--default-toolchain", "1.44.0", "-y"
+    system "rustup-init", "--default-toolchain", "1.51.1", "-y"
     system "opam", "init", "--bare", "--debug", "--auto-setup", "--disable-sandboxing"
     system ["source .cargo/env",  "make build-deps"].join(" && ")
   end
